@@ -38,7 +38,7 @@ from utils.torch_utils import select_device, time_sync
 @torch.no_grad()
 def run(weights=ROOT / 'yolov3.pt',  # model.pt path(s)
         source=ROOT / 'data/images',  # file/dir/URL/glob, 0 for webcam
-        imgsz=640,  # inference size (pixels)
+        imgsz=320,  # inference size (pixels)
         conf_thres=0.25,  # confidence threshold
         iou_thres=0.45,  # NMS IOU threshold
         max_det=1000,  # maximum detections per image
@@ -59,7 +59,7 @@ def run(weights=ROOT / 'yolov3.pt',  # model.pt path(s)
         line_thickness=3,  # bounding box thickness (pixels)
         hide_labels=False,  # hide labels
         hide_conf=False,  # hide confidences
-        half=False,  # use FP16 half-precision inference
+        half=True,  # use FP16 half-precision inference
         dnn=False,  # use OpenCV DNN for ONNX inference
         ):
     source = str(source)
